@@ -1,0 +1,6 @@
+tsconfig
+gitignore
+.env
+api
+plop
+graphql

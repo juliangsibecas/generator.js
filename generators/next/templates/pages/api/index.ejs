@@ -1,0 +1,11 @@
+<% if (typeof(ts) === "undefined") var ts = false %>
+<%_ if (ts) { _%>
+import { NextApiHandler } from "next"
+
+<%_ } _%>
+<% if (!ts) { %>export default<% } else {%>const index: NextApiHandler =<% } %> (req, res) => {
+  res.statusCode = 200;
+  res.json({ name: "Julián Gómez Sibecas" });
+};
+
+<% if (ts) { %>export default index<% } %>

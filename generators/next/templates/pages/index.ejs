@@ -1,0 +1,31 @@
+import React from 'react'
+<%_ if (ts && env) { _%>
+import {GetServerSideProps} from 'next'
+
+interface ServerSideProps {
+  serverSideEnvVar: string;
+}
+
+interface Props extends ServerSideProps {}
+<% } %>
+const Home<% if (ts) { %>: React.FC<% if (env) { %><Props><% }} %> = (<% if (env) { %>{serverSideEnvVar}<% }%>) => {
+  return (
+    <div>
+      <p>Template by juliangsibecas</p>
+      <% if (env) { %>
+      <p>Client Side env var: {process.env.CLIENT_SIDE_VAR}</p>
+      <p>Server Side env var: {serverSideEnvVar}</p>
+      <%_ } _%>
+    </div>
+  )
+}
+<% if (env) {%>
+export const getServerSideProps<% if (ts) { %>:GetServerSideProps<ServerSideProps><% } %> = () => (
+  {
+    props: {
+      serverSideEnvVar: process.env.SERVER_SIDE_VAR
+    }
+  }
+)
+<% } %>
+export default Home

@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../src/next/env/index.ts"],"names":[],"mappings":";;AAAA,iEAA8D;AAE9D,eAAqB,SAAQ,iCAAe;IAC1C,OAAO;QACL,IAAI,CAAC,OAAO,CAAC,OAAO,CAAC,iBAAiB,EAAE,kBAAkB,CAAC,CAAC;QAC5D,IAAI,CAAC,eAAe,CAAC,IAAI,CAAC,YAAY,CAAC,IAAI,CAAC,EAAE,IAAI,CAAC,eAAe,EAAE,CAAC,CAAC;IACxE,CAAC;CACF;AALD,4BAKC"}
