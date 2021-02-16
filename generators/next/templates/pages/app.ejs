@@ -1,10 +1,9 @@
-<%_ if (typeof(ts) =="undefined") var ts = false _%>
 import React from 'react'
 <% if (ts) { %>
 import { AppProps } from 'next/app'
 <% } %>
 const MyApp<% if (ts) { %>: React.FC<AppProps><% } %> = ({ Component, pageProps }) => {
-  return <Component {...pageProps} />;
-};
+  return <Component {...pageProps} />
+}
 
 export default MyApp

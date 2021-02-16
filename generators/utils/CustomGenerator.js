@@ -21,10 +21,9 @@ class CustomGenerator extends yeoman_generator_1.default {
             copyTpl: (tplPath, destPath, features = {}, opts = {}) => {
                 if (!opts)
                     opts = {};
-                console.log(features);
-                this.fs.copyTpl(this.templatePath(tplPath), `${this.destinationPath(destPath)}.${destPath.includes(".")
+                this.fs.copyTpl(this.templatePath(tplPath), this.destinationPath(destPath.includes(".")
                     ? destPath
-                    : this.helpers.getFileExt(Boolean(features.ts), Boolean(opts.jsx))}`, features);
+                    : `${destPath}.${this.helpers.getFileExt(Boolean(features.ts), Boolean(opts.jsx))}`), features);
             },
             yarnInstallSync: (packages) => {
                 return this.spawnCommandSync("yarn", ["add", ...packages]);

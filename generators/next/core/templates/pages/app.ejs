@@ -1,0 +1,22 @@
+import React from 'react'
+<%_ if (ts) { _%>
+import { AppProps } from 'next/app'
+<%_ } _%>
+<%_ if (chakra) { _%>
+import { ChakraProvider } from '@chakra-ui/react'
+
+import { theme } from '../theme'
+<% } %>
+const MyApp<% if (ts) { %>: React.FC<AppProps><% } %> = ({ Component, pageProps }) => {
+  <%_ if (chakra) { _%>
+  return (
+    <ChakraProvider resetCSS theme={theme}>
+      <Component {...pageProps} />
+    </ChakraProvider>
+  )
+  <%_ } else { _%>
+  return <Component {...pageProps} />
+  <%_ } _%>
+}
+
+export default MyApp

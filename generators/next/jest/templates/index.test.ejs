@@ -1,0 +1,13 @@
+import React from 'react'
+import { render } from '@testing-library/react'
+
+import Index from './index'
+
+describe('Example test', () => {
+  test('it renders', () => {
+    const { getByText } = render(<Index />)
+    const el = getByText('Template by juliangsibecas')
+
+    expect(el).toBeInTheDocument()
+  })
+})
